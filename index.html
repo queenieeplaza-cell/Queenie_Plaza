@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queenie Plaza | Take Bold Action. Lead with Purpose.</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat (Bold, Regular, Semi-Bold, Medium) & Playfair Display for accents -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons for premium luxury look -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // Ensure image fail safety without rendering broken default browser icons in sandboxed iframes
+        function handleImageError(imgElement, type) {
+            console.warn("Attempting to recover rendering for: " + imgElement.src);
+            const container = imgElement.parentElement;
+            imgElement.style.opacity = '0';
+            
+            let svgMarkup = '';
+            if (type === 'strategic') {
+                svgMarkup = `
+                    <div class="w-full h-full bg-gradient-to-b from-executiveBlue-950 to-executiveBlack flex flex-col items-center justify-center p-6 text-center absolute inset-0">
+                        <div class="w-16 h-16 rounded-full bg-gold-gradient flex items-center justify-center text-executiveBlack text-2xl mb-3 shadow-lg">
+                            <i class="fa-solid fa-user-tie animate-pulse"></i>
+                        </div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-wide">AI Prof Photo_3.png</h4>
+                        <p class="text-[9px] text-executiveGold-500 tracking-widest uppercase font-semibold mt-1">Direct & Strategic Persona</p>
+                        <p class="text-[8px] text-gray-400 mt-2 max-w-xs">Loads automatically when hosted or previewed in production with this asset file.</p>
+                    </div>
+                `;
+            } else if (type === 'warm') {
+                svgMarkup = `
+                    <div class="w-full h-full bg-gradient-to-b from-executiveBlue-900 to-executiveBlack flex flex-col items-center justify-center p-6 text-center absolute inset-0">
+                        <div class="w-16 h-16 rounded-full bg-executiveBlue-800 border-2 border-executiveGold-500 flex items-center justify-center text-executiveGold-500 text-2xl mb-3 shadow-lg">
+                            <i class="fa-solid fa-face-smile animate-pulse"></i>
+                        </div>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-wide">Professional Picture_3.png</h4>
+                        <p class="text-[9px] text-executiveGold-500 tracking-widest uppercase font-semibold mt-1">Warm & Confident Identity</p>
+                        <p class="text-[8px] text-gray-400 mt-2 max-w-xs">Loads automatically when hosted or previewed in production with this asset file.</p>
+                    </div>
+                `;
+            } else {
+                svgMarkup = `
+                    <div class="w-full h-full bg-executiveBlue-900 flex items-center justify-center text-executiveGold-500 text-xs font-bold absolute inset-0">
+                        QP
+                    </div>
+                `;
+            }
+            
+            const tempDiv = document.createElement('div');
+            tempDiv.className = "w-full h-full absolute inset-0 flex items-center justify-center overflow-hidden rounded-inherit";
+            tempDiv.innerHTML = svgMarkup;
+            container.appendChild(tempDiv);
+        }
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        executiveBlue: {
+                            50: '#f0f4ff',
+                            100: '#e1e9fe',
+                            800: '#1e3a8a', // Royal Blue Brand Key from pdf
+                            900: '#0f1e56',
+                            950: '#070a1e'  // Royal Navy base
+                        },
+                        executiveGold: {
+                            100: '#fef9e7',
+                            400: '#f6e09b',
+                            500: '#d4af37', // Executive Metallic Gold
+                            600: '#b89228',
+                            700: '#91701b'
+                        },
+                        executiveBlack: {
+                            DEFAULT: '#0a0a0c',
+                            card: '#121217',
+                            hover: '#191922'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        glow: {
+                            '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+                            '50%': { opacity: '0.6', transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #070a1e; /* Deep royal black base */
+            color: #f3f4f6;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f6e09b 0%, #d4af37 50%, #b89228 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #f6e09b 0%, #d4af37 50%, #b89228 100%);
+        }
+        .bg-royal-gradient {
+            background: linear-gradient(135deg, #070a1e 0%, #1e3a8a 50%, #070a1e 100%);
+        }
+        .border-gold-gradient {
+            border-image: linear-gradient(135deg, #f6e09b, #d4af37, #91701b) 1;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 23, 0.8);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070a1e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e3a8a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased">
+
+    <!-- Top Announcement Banner -->
+    <div class="w-full bg-gold-gradient text-executiveBlack font-bold py-2.5 px-4 text-center text-[11px] tracking-widest uppercase flex items-center justify-center gap-2 relative z-50 shadow-md">
+        <i class="fa-solid fa-crown animate-pulse"></i> 
+        <span>Now booking keynotes and executive strategy coaching.</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-executiveBlue-950/90 border-b border-executiveBlue-800/30">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex flex-col group focus:outline-none">
+                <span class="text-xl md:text-2xl font-extrabold tracking-wider text-white group-hover:text-executiveGold-400 transition duration-300">
+                    QUEENIE PLAZA
+                </span>
+                <span class="text-[9px] uppercase tracking-[0.25em] text-executiveGold-500 font-semibold">
+                    Take Bold Action. Lead with Purpose.
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-xs tracking-wider uppercase">
+                <a href="#about" class="text-gray-300 hover:text-executiveGold-400 transition duration-200">About</a>
+                <a href="#brand-identity" class="text-gray-300 hover:text-executiveGold-400 transition duration-200">Visual Personas</a>
+                <a href="#values" class="text-gray-300 hover:text-executiveGold-400 transition duration-200">Core Values</a>
+                <a href="#services" class="text-gray-300 hover:text-executiveGold-400 transition duration-200">Services</a>
+                <a href="#social-channels" class="text-gray-300 hover:text-executiveGold-400 transition duration-200 font-bold">Omnichannel Hub</a>
+                <a href="#booking" class="bg-gold-gradient text-executiveBlack px-6 py-2.5 rounded-sm font-extrabold shadow-lg hover:shadow-executiveGold-500/20 hover:scale-105 transition-all duration-300 text-[10px]">
+                    Book Strategy Call
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-white hover:text-executiveGold-400 focus:outline-none p-2" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileDrawer" class="hidden lg:hidden fixed inset-0 z-50 bg-executiveBlue-950/98 backdrop-blur-lg pt-24 px-8">
+            <button id="closeMobileMenuBtn" class="absolute top-6 right-6 text-white text-3xl hover:text-executiveGold-400">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <nav class="flex flex-col space-y-6 text-base font-bold tracking-widest uppercase text-center">
+                <a href="#about" class="text-gray-300 hover:text-executiveGold-400 text-lg py-2" onclick="toggleMobileMenu()">About Queenie</a>
+                <a href="#brand-identity" class="text-gray-300 hover:text-executiveGold-400 text-lg py-2" onclick="toggleMobileMenu()">Visual Personas</a>
+                <a href="#values" class="text-gray-300 hover:text-executiveGold-400 text-lg py-2" onclick="toggleMobileMenu()">Core Values</a>
+                <a href="#services" class="text-gray-300 hover:text-executiveGold-400 text-lg py-2" onclick="toggleMobileMenu()">Services</a>
+                <a href="#social-channels" class="text-gray-300 hover:text-executiveGold-400 text-lg py-2" onclick="toggleMobileMenu()">Omnichannel Hub</a>
+                <a href="#booking" class="bg-gold-gradient text-executiveBlack text-center py-4 rounded-sm font-extrabold tracking-wider mt-4 shadow-xl" onclick="toggleMobileMenu()">
+                    Book Strategy Call
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[95vh] flex items-center justify-center overflow-hidden py-12 md:py-20 px-6 bg-gradient-to-b from-executiveBlue-950 via-executiveBlue-950 to-executiveBlack">
+        <!-- Background Light Glows -->
+        <div class="absolute -top-40 -left-40 w-[450px] h-[450px] bg-executiveBlue-800/15 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[600px] h-[600px] bg-executiveGold-700/10 rounded-full blur-[130px] pointer-events-none animate-pulse-slow"></div>
+        
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            
+            <!-- Left Side Content -->
+            <div class="lg:col-span-7 flex flex-col space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center justify-center lg:justify-start gap-3 text-executiveGold-500 font-semibold uppercase tracking-widest text-xs md:text-sm">
+                    <span class="w-10 h-[2px] bg-gold-gradient hidden lg:block"></span>
+                    <span class="font-bold tracking-[0.2em]">LEADERSHIP & PERSONAL BRAND STRATEGIST</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
+                    Take Bold Action. <br/>
+                    <span class="text-gold-gradient">Lead with Purpose.</span>
+                </h1>
+                
+                <p class="text-gray-300 text-base md:text-xl font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Helping aspiring leaders and entrepreneurs turn hesitation into confident action through clear strategy, empowering communication, and purpose-driven leadership.
+                </p>
+
+                <!-- Credentials Badges -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2 text-[10px] md:text-xs tracking-wider uppercase font-semibold">
+                    <span class="bg-executiveBlue-900/40 border border-executiveBlue-800/40 px-4 py-2 rounded-md flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-users text-executiveGold-500"></i> Executive Coach
+                    </span>
+                    <span class="bg-executiveBlue-900/40 border border-executiveBlue-800/40 px-4 py-2 rounded-md flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-microphone text-executiveGold-500"></i> Keynote Speaker
+                    </span>
+                    <span class="bg-executiveBlue-900/40 border border-executiveBlue-800/40 px-4 py-2 rounded-md flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-compass text-executiveGold-500"></i> Brand Consultant
+                    </span>
+                </div>
+
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-6">
+                    <a href="#brand-identity" class="w-full sm:w-auto bg-gold-gradient text-executiveBlack hover:scale-102 px-8 py-4 rounded-sm font-extrabold tracking-widest uppercase shadow-lg shadow-executiveGold-500/10 hover:shadow-executiveGold-500/25 transition duration-300 text-center text-xs md:text-sm">
+                        Explore Visual Personas
+                    </a>
+                    <a href="#booking" class="w-full sm:w-auto border border-executiveGold-500 text-executiveGold-500 hover:bg-gold-gradient hover:text-executiveBlack px-8 py-4 rounded-sm font-extrabold tracking-widest uppercase transition duration-300 text-center text-xs md:text-sm">
+                        Book A Meeting
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side Profile Photo (AI Prof Photo_3.png) -->
+            <div class="lg:col-span-5 flex flex-col justify-center items-center">
+                <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] group">
+                    <!-- Royal Gold Crown Floating Above Portrait -->
+                    <div class="absolute -top-12 left-1/2 -translate-x-1/2 z-20 text-5xl text-executiveGold-500 animate-float">
+                        <svg class="w-16 h-16 drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]" fill="url(#goldGradient)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#f6e09b" />
+                                    <stop offset="50%" stop-color="#d4af37" />
+                                    <stop offset="100%" stop-color="#91701b" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M2 19h20v2H2v-2zm2-2.583l2.857-4.286L12 17l5.143-4.869L20 16.417V5.5l-4.5 4.5L12 3 8.5 10 4 5.5v10.917z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Glowing Rings -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-executiveGold-500 via-executiveBlue-800 to-executiveGold-400 rounded-full animate-spin-slow opacity-80 p-[4px] shadow-2xl"></div>
+                    <div class="absolute inset-[-8px] bg-gradient-to-bl from-executiveGold-500/20 to-executiveBlue-800/10 rounded-full animate-glow pointer-events-none"></div>
+                    
+                    <!-- Portrait Frame displaying AI Prof Photo_3.png -->
+                    <div class="absolute inset-2.5 bg-executiveBlue-950 rounded-full overflow-hidden flex items-center justify-center border border-executiveBlue-800/50 shadow-inner">
+                        <img 
+                            src="https://lh3.googleusercontent.com/d/1EGvdzQxJPP3_--HV715MJ-lo1XduDA4u" 
+                            alt="Queenie Plaza Strategic Profile" 
+                            class="w-full h-full object-cover object-top scale-[1.05] group-hover:scale-110 transition duration-500"
+                            onerror="handleImageError(this, 'strategic')"
+                        />
+                    </div>
+                </div>
+
+                <!-- USP Spotlight Bubble -->
+                <div class="mt-8 bg-executiveBlack-card/90 border border-executiveBlue-800/30 p-5 rounded-lg shadow-2xl max-w-sm text-center relative glass-panel">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold-gradient text-executiveBlack text-[10px] font-extrabold tracking-widest px-4 py-1.5 uppercase rounded-sm shadow-md">
+                        Unique Selling Proposition
+                    </div>
+                    <p class="text-xs text-gray-200 italic mt-3 leading-relaxed">
+                        "Queenie Plaza helps aspiring leaders and entrepreneurs turn hesitation into confident action through clear strategy, empowering communication, and purpose-driven leadership."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Identity Module -->
+    <section id="brand-identity" class="py-24 bg-executiveBlack border-t border-executiveBlue-800/25 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-executiveBlue-900/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-executiveGold-500 uppercase tracking-widest text-xs font-bold bg-executiveBlue-950 px-3.5 py-1.5 rounded-full border border-executiveGold-500/20 inline-block mb-3">
+                    Visual Strategy & Brand Voice
+                </span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+                    The Dual Aspects of Executive Action
+                </h2>
+                <p class="text-gray-300 mt-3 text-xs md:text-sm">
+                    Queenie's brand guidelines blend a powerful, analytical business strategy with accessible, warm development. Toggle the parameters below to witness her identity styles transition in real time.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Brand Voice Selector Controls -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="text-executiveGold-500 uppercase tracking-widest text-xs font-bold flex items-center gap-2">
+                        <span class="w-6 h-[1.5px] bg-gold-gradient"></span>
+                        <span>INTERACTIVE PERSONA TOGGLE</span>
+                    </div>
+                    <h3 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+                        Aligning Direct Execution with Absolute Rapport
+                    </h3>
+                    <p class="text-gray-300 text-xs md:text-sm font-light leading-relaxed">
+                        To influence high-performing ecosystems, leaders must leverage both strategic calculation and genuine emotional alignment. Choose a visual identity perspective to explore:
+                    </p>
+
+                    <!-- Selection Buttons -->
+                    <div class="flex flex-col space-y-3 pt-2">
+                        <!-- Strategic Button -->
+                        <button onclick="switchBrandPersona('strategic')" id="personaBtn-strategic" class="w-full text-left p-5 rounded-md border-2 border-executiveGold-500/80 bg-executiveBlue-950 text-white transition duration-300 shadow-lg">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center text-executiveBlack font-bold text-sm">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xs md:text-sm tracking-wide">Direct & Strategic Persona</h4>
+                                    <span class="text-[9px] text-executiveGold-400 uppercase tracking-wider font-semibold">Focus: Action, Systems, Execution</span>
+                                </div>
+                            </div>
+                        </button>
+
+                        <!-- Warm Button -->
+                        <button onclick="switchBrandPersona('warm')" id="personaBtn-warm" class="w-full text-left p-5 rounded-md border border-executiveBlue-800/30 bg-executiveBlack-card/50 text-gray-400 hover:border-executiveGold-500/35 hover:text-white transition duration-300">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-executiveBlue-900/60 border border-executiveBlue-800/50 flex items-center justify-center text-gray-300 text-sm">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xs md:text-sm tracking-wide">Warm & Confident Persona</h4>
+                                    <span class="text-[9px] text-gray-400 uppercase tracking-wider font-semibold">Focus: Empathy, Rapport, Alignment</span>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Display Showcase with Dynamic Images -->
+                <div class="lg:col-span-7 flex justify-center">
+                    <div class="relative w-full max-w-md bg-executiveBlue-950/80 border border-executiveBlue-800/40 p-4 rounded-xl glass-panel shadow-2xl">
+                        
+                            <!-- Strategic Profile Showcase (AI Prof Photo_3.png) -->
+                        <div id="personaCard-strategic" class="space-y-6">
+                            <div class="relative overflow-hidden rounded-lg aspect-[3/4] border border-executiveGold-500/20 group">
+                                <div class="absolute inset-0 bg-gradient-to-t from-executiveBlue-950 via-transparent to-transparent opacity-60 z-10"></div>
+                                <img 
+                                    src="https://lh3.googleusercontent.com/d/1r83lYIbhF2Qn4KWYfz5HcckbAMlSqFEL" 
+                                    alt="Queenie Plaza Strategic Leadership Persona" 
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                                    onerror="handleImageError(this, 'strategic')"
+                                />
+                                <div class="absolute bottom-4 left-4 right-4 z-20 bg-executiveBlue-950/90 border border-executiveGold-500/30 p-4 rounded-sm backdrop-blur-sm">
+                                    <span class="text-[9px] text-executiveGold-500 font-extrabold uppercase tracking-widest block mb-1">Empowering & Direct Voice</span>
+                                    <h4 class="text-sm text-white font-extrabold tracking-wide">"Indecision is the luxury of the unprepared."</h4>
+                                </div>
+                            </div>
+                            <div class="space-y-2 text-center lg:text-left px-2">
+                                <h4 class="text-white font-bold text-sm uppercase tracking-wider">The Strategic Activator</h4>
+                                <p class="text-xs text-gray-400 leading-relaxed font-light">
+                                    This configuration focuses on structured processes, measurable leadership results, and decisive direction.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Warm Profile Showcase (Professional Picture_3.png) -->
+                        <div id="personaCard-warm" class="hidden space-y-6">
+                            <div class="relative overflow-hidden rounded-lg aspect-[3/4] border border-executiveGold-500/20 group">
+                                <div class="absolute inset-0 bg-gradient-to-t from-executiveBlue-950 via-transparent to-transparent opacity-60 z-10"></div>
+                                <img 
+                                    src="https://lh3.googleusercontent.com/d/1EGvdzQxJPP3_--HV715MJ-lo1XduDA4u" 
+                                    alt="Queenie Plaza Warm Leader Persona" 
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                                    onerror="handleImageError(this, 'warm')"
+                                />
+                                <div class="absolute bottom-4 left-4 right-4 z-20 bg-executiveBlue-950/90 border border-executiveGold-500/30 p-4 rounded-sm backdrop-blur-sm">
+                                    <span class="text-[9px] text-executiveGold-500 font-extrabold uppercase tracking-widest block mb-1">Warm & Confident Voice</span>
+                                    <h4 class="text-sm text-white font-extrabold tracking-wide">"Real leadership is service and connection in action."</h4>
+                                </div>
+                            </div>
+                            <div class="space-y-2 text-center lg:text-left px-2">
+                                <h4 class="text-white font-bold text-sm uppercase tracking-wider">The Empathetic Leader</h4>
+                                <p class="text-xs text-gray-400 leading-relaxed font-light">
+                                    Showcasing the welcoming close-up portrait from <strong class="text-executiveGold-400 font-bold">"Professional Picture_3.png"</strong>, this layout emphasizes collaborative growth, community trust, and friendly support.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 relative border-t border-executiveBlue-800/20 bg-executiveBlack overflow-hidden">
+        <!-- Subtle background glow -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-executiveBlue-800/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-executiveGold-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Side: Speaker Image using provided Google Drive Link -->
+                <div class="lg:col-span-5 relative group order-2 lg:order-1 mt-10 lg:mt-0">
+                    <!-- Glowing border effect behind image -->
+                    <div class="absolute -inset-2 bg-gradient-to-tr from-executiveGold-500/30 to-executiveBlue-800/30 rounded-xl blur-lg opacity-60 group-hover:opacity-100 transition duration-700"></div>
+                    <div class="relative rounded-xl overflow-hidden border border-executiveGold-500/30 shadow-2xl bg-executiveBlue-950">
+                        <!-- Dark overlay gradient at the bottom -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-executiveBlack/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+                        <img 
+                            src="https://lh3.googleusercontent.com/d/1lrWAsSzGFSYsgkVVPlmaLjeEoadMxeP6" 
+                            alt="Queenie Plaza delivering a keynote to an audience" 
+                            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out"
+                            onerror="this.onerror=null; this.src='Audience.png';"
+                        />
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <span class="bg-gold-gradient text-executiveBlack text-[9px] font-extrabold px-3 py-1 uppercase tracking-widest rounded-sm">Keynote Speaker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Biography details -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left order-1 lg:order-2">
+                    <div class="text-executiveGold-500 uppercase tracking-widest text-xs font-bold flex items-center justify-center lg:justify-start gap-2">
+                        <span class="w-6 h-[1.5px] bg-gold-gradient hidden sm:block lg:hidden"></span>
+                        <span>BIOGRAPHY & MISSION</span>
+                        <span class="w-6 h-[1.5px] bg-gold-gradient hidden sm:block"></span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                        Empowering Entrepreneurs to <br><span class="text-gold-gradient">Build Success with Purpose</span>
+                    </h2>
+                    
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
+                        Queenie Plaza acts as an organizational catalyst, helping high-potential leaders eliminate strategic hesitation and align with measurable business impacts.
+                    </p>
+                    
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
+                        Her unique mentoring blueprint merges calculated target-setting with resilient executive intelligence. This enables organizations to confidently project high-level authority, design clear legacy strategies, and secure long-term trust.
+                    </p>
+
+                    <!-- Visual attributes list -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 max-w-2xl mx-auto lg:mx-0 text-left">
+                        <div class="bg-executiveBlack-card/80 border border-executiveBlue-800/40 p-5 rounded-lg hover:border-executiveGold-500/60 transition duration-300 shadow-xl">
+                            <i class="fa-solid fa-star text-executiveGold-500 text-2xl mb-3"></i>
+                            <h4 class="font-bold text-white text-xs uppercase tracking-wider">High Trust Alignment</h4>
+                            <p class="text-[11px] text-gray-400 mt-1.5">Direct relationships and clear mutual pathways.</p>
+                        </div>
+                        <div class="bg-executiveBlack-card/80 border border-executiveBlue-800/40 p-5 rounded-lg hover:border-executiveGold-500/60 transition duration-300 shadow-xl">
+                            <i class="fa-solid fa-chart-line text-executiveGold-500 text-2xl mb-3"></i>
+                            <h4 class="font-bold text-white text-xs uppercase tracking-wider">Metric-Based Execution</h4>
+                            <p class="text-[11px] text-gray-400 mt-1.5">Eliminating business hesitation through strategic filters.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Promise Section -->
+    <section id="promise" class="py-24 bg-executiveBlack/95 relative border-t border-executiveBlue-800/20">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="bg-royal-gradient border border-executiveGold-500/30 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden mb-16 animate-pulse-slow">
+                <div class="absolute right-0 top-0 opacity-5 pointer-events-none transform translate-x-20 -translate-y-20 lg:translate-x-0 lg:translate-y-0">
+                    <i class="fa-solid fa-compass text-[300px] text-executiveGold-500"></i>
+                </div>
+
+                <div class="max-w-3xl relative z-10">
+                    <div class="text-executiveGold-500 uppercase tracking-widest text-xs font-bold mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-compass animate-spin-slow"></i> THE BRAND PROMISE
+                    </div>
+                    <h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 leading-snug">
+                        "To inspire courage, create momentum, and help people build success with clarity, confidence, and purpose."
+                    </h2>
+                    <p class="text-gray-300 font-light text-sm md:text-lg mb-8 leading-relaxed">
+                        We resolve structural inertia, pinpoint growth barriers, and provide actionable milestones to bridge leadership targets.
+                    </p>
+                </div>
+
+                <!-- 4 Actionable Steps Grid -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8 relative z-10">
+                    <div class="bg-executiveBlue-950/90 border border-executiveBlue-800/40 p-5 rounded-lg hover:border-executiveGold-500/50 transition duration-300">
+                        <div class="text-executiveGold-500 text-3xl font-extrabold mb-1">01</div>
+                        <div class="font-bold text-white tracking-wide text-xs md:text-sm uppercase">Courage</div>
+                        <div class="text-[9px] text-executiveGold-400 mt-1 uppercase">To Start Boldly</div>
+                    </div>
+                    <div class="bg-executiveBlue-950/90 border border-executiveBlue-800/40 p-5 rounded-lg hover:border-executiveGold-500/50 transition duration-300">
+                        <div class="text-executiveGold-500 text-3xl font-extrabold mb-1">02</div>
+                        <div class="font-bold text-white tracking-wide text-xs md:text-sm uppercase">Momentum</div>
+                        <div class="text-[9px] text-executiveGold-400 mt-1 uppercase">To Grow Scalably</div>
+                    </div>
+                    <div class="bg-executiveBlue-950/90 border border-executiveBlue-800/40 p-5 rounded-lg hover:border-executiveGold-500/50 transition duration-300">
+                        <div class="text-executiveGold-500 text-3xl font-extrabold mb-1">03</div>
+                        <div class="font-bold text-white tracking-wide text-xs md:text-sm uppercase">Clarity</div>
+                        <div class="text-[9px] text-executiveGold-400 mt-1 uppercase">To Decide Swiftly</div>
+                    </div>
+                    <div class="bg-executiveBlue-950/90 border border-executiveBlue-800/40 p-5 rounded-lg hover:border-executiveGold-500/50 transition duration-300">
+                        <div class="text-executiveGold-500 text-3xl font-extrabold mb-1">04</div>
+                        <div class="font-bold text-white tracking-wide text-xs md:text-sm uppercase">Purpose</div>
+                        <div class="text-[9px] text-executiveGold-400 mt-1 uppercase">To Lead Humanely</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Brand Values Section -->
+    <section id="values" class="py-24 bg-executiveBlack text-white relative border-t border-executiveBlue-800/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-executiveGold-500 uppercase tracking-widest text-xs font-semibold">Our Executive Code</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-1 text-white">
+                    Core Brand Values
+                </h2>
+                <p class="text-gray-400 mt-2 text-xs md:text-sm">
+                    These pillars serve as our central standards for executive leadership and professional growth.
+                </p>
+            </div>
+
+            <!-- Custom 4 Pillars Grid layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Pillar 1 -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/30 p-8 rounded-xl relative overflow-hidden group hover:border-executiveGold-500/50 transition duration-300">
+                    <div class="absolute -top-6 -right-6 w-16 h-16 bg-executiveBlue-800/10 rounded-full group-hover:scale-150 transition-all duration-300"></div>
+                    <div class="text-4xl text-executiveGold-500 mb-6">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <span class="text-xs text-executiveGold-500 font-extrabold uppercase tracking-widest">Value 01</span>
+                    <h3 class="text-lg font-bold mt-2 text-white group-hover:text-gold-gradient transition">Action with Clarity</h3>
+                    <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                        Say goodbye to choice paralysis. We guide you to formulate decisive paths constructed on accurate logic, clear strategic filters, and direct brand metrics.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/30 p-8 rounded-xl relative overflow-hidden group hover:border-executiveGold-500/50 transition duration-300">
+                    <div class="absolute -top-6 -right-6 w-16 h-16 bg-executiveBlue-800/10 rounded-full group-hover:scale-150 transition-all duration-300"></div>
+                    <div class="text-4xl text-executiveGold-500 mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <span class="text-xs text-executiveGold-500 font-extrabold uppercase tracking-widest">Value 02</span>
+                    <h3 class="text-lg font-bold mt-2 text-white group-hover:text-gold-gradient transition">Resilient Leadership</h3>
+                    <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                        True authority shines under friction. Learn to build executive emotional intelligence, guide teams with calm assurance, and scale with mental flexibility.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/30 p-8 rounded-xl relative overflow-hidden group hover:border-executiveGold-500/50 transition duration-300">
+                    <div class="absolute -top-6 -right-6 w-16 h-16 bg-executiveBlue-800/10 rounded-full group-hover:scale-150 transition-all duration-300"></div>
+                    <div class="text-4xl text-executiveGold-500 mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <span class="text-xs text-executiveGold-500 font-extrabold uppercase tracking-widest">Value 03</span>
+                    <h3 class="text-lg font-bold mt-2 text-white group-hover:text-gold-gradient transition">Purpose-Driven Growth</h3>
+                    <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                        Revenue without direction leads to early burnout. All initiatives must align directly with personal mission targets, corporate values, and global legacy goals.
+                    </p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/30 p-8 rounded-xl relative overflow-hidden group hover:border-executiveGold-500/50 transition duration-300">
+                    <div class="absolute -top-6 -right-6 w-16 h-16 bg-executiveBlue-800/10 rounded-full group-hover:scale-150 transition-all duration-300"></div>
+                    <div class="text-4xl text-executiveGold-500 mb-6">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <span class="text-xs text-executiveGold-500 font-extrabold uppercase tracking-widest">Value 04</span>
+                    <h3 class="text-lg font-bold mt-2 text-white group-hover:text-gold-gradient transition">People-First Influence</h3>
+                    <p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                        Transform operational management into inspiration. We build strategic empathetic communication, collaborative team culture, and positive relationship structures.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Services Section (Updated with Tiered Packages) -->
+    <section id="services" class="py-24 bg-executiveBlue-950 relative border-t border-executiveBlue-800/20">
+        <!-- Background Light Beams -->
+        <div class="absolute left-0 top-1/4 w-96 h-96 bg-executiveGold-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-executiveBlue-800/10 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-executiveGold-500 uppercase tracking-widest text-xs font-semibold bg-executiveBlack px-4 py-1.5 rounded-full border border-executiveGold-500/30">Growth Infrastructure</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-6 text-white leading-tight">
+                    Premium Service Packages & Deliverables
+                </h2>
+                <p class="text-gray-300 mt-4 text-sm leading-relaxed">
+                    High-value, scalable service structures designed to turn static ideas into clean, functional, high-performing digital infrastructure. Select a category below to explore the tiers.
+                </p>
+            </div>
+
+            <!-- Interactive Accordion for Services -->
+            <div class="space-y-4 max-w-5xl mx-auto">
+
+                <!-- Service 1: Funnel Design -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/40 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group hover:border-executiveGold-500/30">
+                    <button onclick="toggleService('funnel')" class="w-full flex items-center justify-between p-5 md:p-6 bg-executiveBlack-card hover:bg-executiveBlue-900/20 transition focus:outline-none">
+                        <div class="flex items-center gap-5 text-left">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-executiveBlue-900/50 border border-executiveBlue-800 flex items-center justify-center text-executiveGold-500 text-lg shadow-inner group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-filter"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-extrabold text-base md:text-lg tracking-wide">1. Funnel Design Packages</h3>
+                                <p class="text-gray-400 text-[11px] md:text-xs mt-1 font-medium">Focus: High-converting standalone assets designed to drive immediate action.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-executiveBlue-950 border border-executiveBlue-800 text-executiveGold-500">
+                            <i id="service-icon-funnel" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    
+                    <div id="service-content-funnel" class="hidden border-t border-executiveBlue-800/40 p-5 md:p-8 bg-gradient-to-b from-executiveBlue-950/50 to-executiveBlack/80">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 hover:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🛠️ Tier 1: The Essentials Funnel</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$550</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">1 Opt-in/Landing Page + 1 Thank You Page.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Tech & Automation</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Basic email integration (tagging + single automated delivery email).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlue-900/20 border border-executiveGold-500/50 rounded-xl p-6 relative flex flex-col shadow-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition duration-300 transform lg:-translate-y-2">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-executiveBlack text-[9px] font-extrabold tracking-widest px-3 py-1 uppercase rounded-sm shadow-md">Most Popular</div>
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🚀 Tier 2: The Signature Sales Funnel</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$1,000</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveGold-500/20 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">1 Long-form Sales Page + 1 Checkout Page + 1 Upsell/Downsell Page + 1 Order Confirmation Page.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Tech & Automation</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Cart abandonment trigger, payment gateway integration, and a 3-email post-purchase sequence.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 hover:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">💎 Tier 3: The VIP Launch Funnel</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$2,000+</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Full multi-step webinar or product launch funnel (Registration page, Live page, Replay page, Sales page, Checkout flow).</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Tech & Automation</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Complete behavioral-tracked automation sequence (reminders, logic-based follow-ups).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Website Design -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/40 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group hover:border-executiveGold-500/30">
+                    <button onclick="toggleService('website')" class="w-full flex items-center justify-between p-5 md:p-6 bg-executiveBlack-card hover:bg-executiveBlue-900/20 transition focus:outline-none">
+                        <div class="flex items-center gap-5 text-left">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-executiveBlue-900/50 border border-executiveBlue-800 flex items-center justify-center text-executiveGold-500 text-lg shadow-inner group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-extrabold text-base md:text-lg tracking-wide">2. Website Design Packages</h3>
+                                <p class="text-gray-400 text-[11px] md:text-xs mt-1 font-medium">Focus: Turning static ideas into clean, functional, high-performing web infrastructure.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-executiveBlue-950 border border-executiveBlue-800 text-executiveGold-500">
+                            <i id="service-icon-website" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    
+                    <div id="service-content-website" class="hidden border-t border-executiveBlue-800/40 p-5 md:p-8 bg-gradient-to-b from-executiveBlue-950/50 to-executiveBlack/80">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🖥️ Tier 1: The One-Page Powerhouse</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$700</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">1 Premium, high-converting Landing Page or Portfolio page (up to 5 distinct sections).</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Includes</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Basic SEO setup, mobile optimization, contact form integration.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlue-900/20 border border-executiveGold-500/50 rounded-xl p-6 relative flex flex-col shadow-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition duration-300 transform lg:-translate-y-2">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-executiveBlack text-[9px] font-extrabold tracking-widest px-3 py-1 uppercase rounded-sm shadow-md">Most Popular</div>
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🌐 Tier 2: The Business Growth Suite</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$1,200</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveGold-500/20 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Up to 5 core pages (Home, About, Services, Portfolio/Case Studies, Contact).</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Includes</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Custom UI/UX styling, standard SEO blueprint, dynamic contact/booking forms, and a 1-hour hand-off training video.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">👑 Tier 3: The Premium Corporate/E-Commerce Web</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$2,200+</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Up to 10 fully customized pages or a foundational e-commerce store (up to 20 products).</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Includes</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Advanced CMS setup (blogs/resources), speed optimization, complete platform integrations, and standard security hand-off protocols.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Social Media -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/40 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group hover:border-executiveGold-500/30">
+                    <button onclick="toggleService('social')" class="w-full flex items-center justify-between p-5 md:p-6 bg-executiveBlack-card hover:bg-executiveBlue-900/20 transition focus:outline-none">
+                        <div class="flex items-center gap-5 text-left">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-executiveBlue-900/50 border border-executiveBlue-800 flex items-center justify-center text-executiveGold-500 text-lg shadow-inner group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-extrabold text-base md:text-lg tracking-wide">3. Social Media Content Creation (Batch Packages)</h3>
+                                <p class="text-gray-400 text-[11px] md:text-xs mt-1 font-medium">Focus: Comprehensive, scroll-stopping content batches tailored to your brand's voice.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-executiveBlue-950 border border-executiveBlue-800 text-executiveGold-500">
+                            <i id="service-icon-social" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    
+                    <div id="service-content-social" class="hidden border-t border-executiveBlue-800/40 p-5 md:p-8 bg-gradient-to-b from-executiveBlue-950/50 to-executiveBlack/80">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🎨 Tier 1: The Starter Content Batch</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$500 <span class="text-xs text-gray-500 font-medium">/ batch</span></div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">12 high-converting static graphic templates + 12 written captions.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Includes & Hand-off</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Hashtag strategy and a structured 1-month Content Calendar sheet. All assets delivered in a single ZIP/Google Drive folder. No posting included.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-executiveBlue-900/20 border border-executiveGold-500/50 rounded-xl p-6 relative flex flex-col shadow-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition duration-300 transform lg:-translate-y-2">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-executiveBlack text-[9px] font-extrabold tracking-widest px-3 py-1 uppercase rounded-sm shadow-md">Most Popular</div>
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🎬 Tier 2: The Engagement Booster Batch</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$1,000 <span class="text-xs text-gray-500 font-medium">/ batch</span></div>
+                                <div class="space-y-4 flex-grow border-t border-executiveGold-500/20 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">15 static/carousel graphics + 5 short-form video concepts/edits (Reels/TikToks format from client footage) + 20 captions.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Includes & Hand-off</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Full content calendar matrix + strategic content pillars analysis. All final media and copy delivered at once.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🔥 Tier 3: The Ultimate Brand Authority Batch</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$1,600 <span class="text-xs text-gray-500 font-medium">/ batch</span></div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">30 days of complete content assets (20 graphics/carousels + 10 edited short-form videos) + 30 optimized captions.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Includes</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Ready-to-import scheduling file, engagement-driving hooks bank, and template library link.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Brand Kit -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/40 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group hover:border-executiveGold-500/30">
+                    <button onclick="toggleService('brand')" class="w-full flex items-center justify-between p-5 md:p-6 bg-executiveBlack-card hover:bg-executiveBlue-900/20 transition focus:outline-none">
+                        <div class="flex items-center gap-5 text-left">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-executiveBlue-900/50 border border-executiveBlue-800 flex items-center justify-center text-executiveGold-500 text-lg shadow-inner group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-extrabold text-base md:text-lg tracking-wide">4. Brand Kit Design Packages</h3>
+                                <p class="text-gray-400 text-[11px] md:text-xs mt-1 font-medium">Focus: Professional, clean, and tech-inspired visual identity frameworks delivered as unchangeable corporate assets.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-executiveBlue-950 border border-executiveBlue-800 text-executiveGold-500">
+                            <i id="service-icon-brand" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    
+                    <div id="service-content-brand" class="hidden border-t border-executiveBlue-800/40 p-5 md:p-8 bg-gradient-to-b from-executiveBlue-950/50 to-executiveBlack/80">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">✒️ Tier 1: Logo & Palette Essentials</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$350</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Primary logo design (3 initial concepts, 2 rounds of refinement) + defined HEX color palette + typography selection guide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlue-900/20 border border-executiveGold-500/50 rounded-xl p-6 relative flex flex-col shadow-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition duration-300 transform lg:-translate-y-2">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-executiveBlack text-[9px] font-extrabold tracking-widest px-3 py-1 uppercase rounded-sm shadow-md">Most Popular</div>
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🏷️ Tier 2: The Professional Brand Identity</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$850</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveGold-500/20 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Primary, secondary, and sub-mark/icon logo variations + Color palette + Typography hierarchy + 5 customized social media profile headers/templates.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">📘 Tier 3: The Comprehensive Brand Bible</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$1,500</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Full Brand Identity Kit + a comprehensive Brand Guidelines PDF (explaining clear usage rules, spacing, and brand voice rules) + Business card design + 10-piece custom icon/pattern set.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5: Email Marketing -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/40 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group hover:border-executiveGold-500/30">
+                    <button onclick="toggleService('email')" class="w-full flex items-center justify-between p-5 md:p-6 bg-executiveBlack-card hover:bg-executiveBlue-900/20 transition focus:outline-none">
+                        <div class="flex items-center gap-5 text-left">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-executiveBlue-900/50 border border-executiveBlue-800 flex items-center justify-center text-executiveGold-500 text-lg shadow-inner group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-extrabold text-base md:text-lg tracking-wide">5. Email Marketing Setup Packages</h3>
+                                <p class="text-gray-400 text-[11px] md:text-xs mt-1 font-medium">Focus: High-leverage, technical infrastructure build-outs that function automatically.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-executiveBlue-950 border border-executiveBlue-800 text-executiveGold-500">
+                            <i id="service-icon-email" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    
+                    <div id="service-content-email" class="hidden border-t border-executiveBlue-800/40 p-5 md:p-8 bg-gradient-to-b from-executiveBlue-950/50 to-executiveBlack/80">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">✉️ Tier 1: The Welcome Engine</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$500</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">ESP Account Configuration (Klaviyo, Mailchimp, ActiveCampaign, etc.) + 1 Master Newsletter Template + 3-step automated Welcome/Onboarding sequence.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlue-900/20 border border-executiveGold-500/50 rounded-xl p-6 relative flex flex-col shadow-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition duration-300 transform lg:-translate-y-2">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-executiveBlack text-[9px] font-extrabold tracking-widest px-3 py-1 uppercase rounded-sm shadow-md">Most Popular</div>
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🔄 Tier 2: The Automated Nurture Suite</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$1,000</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveGold-500/20 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Complete ESP setup + 2 Master Templates + 2 core automated sequences (e.g., 5-email Welcome sequence + 4-email Lead Magnet delivery/nurture sequence).</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Includes</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Audience segmentation rules and tag infrastructure setup.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">💰 Tier 3: The High-Ticket Funnel Sequence</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$2,000</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Deep behavioral-based email architecture. Up to 4 custom automation sequences (Welcome, Abandoned Cart/Interest, Re-engagement, Post-purchase) totaling up to 15-20 highly optimized emails.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6: Lead Gen -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/40 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group hover:border-executiveGold-500/30">
+                    <button onclick="toggleService('lead')" class="w-full flex items-center justify-between p-5 md:p-6 bg-executiveBlack-card hover:bg-executiveBlue-900/20 transition focus:outline-none">
+                        <div class="flex items-center gap-5 text-left">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-executiveBlue-900/50 border border-executiveBlue-800 flex items-center justify-center text-executiveGold-500 text-lg shadow-inner group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-extrabold text-base md:text-lg tracking-wide">6. Lead Generation Projects</h3>
+                                <p class="text-gray-400 text-[11px] md:text-xs mt-1 font-medium">Focus: Clean, accurate database building delivered as a single, valuable data file.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-executiveBlue-950 border border-executiveBlue-800 text-executiveGold-500">
+                            <i id="service-icon-lead" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    
+                    <div id="service-content-lead" class="hidden border-t border-executiveBlue-800/40 p-5 md:p-8 bg-gradient-to-b from-executiveBlue-950/50 to-executiveBlack/80">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">📊 Tier 1: Targeted Prospect List (Micro)</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$300</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">A verified list of 250 highly targeted, clean B2B leads.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Data Points</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Name, Title, Company, verified Business Email, LinkedIn URL, Location.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlue-900/20 border border-executiveGold-500/50 rounded-xl p-6 relative flex flex-col shadow-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition duration-300 transform lg:-translate-y-2">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-executiveBlack text-[9px] font-extrabold tracking-widest px-3 py-1 uppercase rounded-sm shadow-md">Most Popular</div>
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🔍 Tier 2: Deep-Dive Market List (Standard)</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$900</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveGold-500/20 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">A verified list of 750 high-intent leads + detailed company data (Company size, revenue tier, tech stack used if applicable).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🗃️ Tier 3: The Data & CRM Architecture</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$1,500+</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">1,500+ deeply researched, verified leads + clean mapping and direct import into your CRM of choice, structured into custom pipelines and tags.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 7: AI Content Systems -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/40 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group hover:border-executiveGold-500/30">
+                    <button onclick="toggleService('ai')" class="w-full flex items-center justify-between p-5 md:p-6 bg-executiveBlack-card hover:bg-executiveBlue-900/20 transition focus:outline-none">
+                        <div class="flex items-center gap-5 text-left">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-executiveBlue-900/50 border border-executiveBlue-800 flex items-center justify-center text-executiveGold-500 text-lg shadow-inner group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-extrabold text-base md:text-lg tracking-wide">7. AI Content Systems</h3>
+                                <p class="text-gray-400 text-[11px] md:text-xs mt-1 font-medium">Focus: Building a dynamic digital asset that empowers you to run your own content house.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-executiveBlue-950 border border-executiveBlue-800 text-executiveGold-500">
+                            <i id="service-icon-ai" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    
+                    <div id="service-content-ai" class="hidden border-t border-executiveBlue-800/40 p-5 md:p-8 bg-gradient-to-b from-executiveBlue-950/50 to-executiveBlack/80">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🤖 Tier 1: The Prompt Library Blueprint</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$500</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Custom library of 15 advanced, highly structured prompts tailored specifically to your niche, voice, and industry (for ChatGPT/Claude).</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Includes</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">A quick-reference guide on how to run them for consistent outputs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlue-900/20 border border-executiveGold-500/50 rounded-xl p-6 relative flex flex-col shadow-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition duration-300 transform lg:-translate-y-2">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-executiveBlack text-[9px] font-extrabold tracking-widest px-3 py-1 uppercase rounded-sm shadow-md">Most Popular</div>
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">⚙️ Tier 2: The AI Content Workflow</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$1,300</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveGold-500/20 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Step-by-step system design mapping how to turn 1 piece of long-form content into 10 short-form pieces using specific AI tools. Includes custom prompt arrays and a Loom video walkthrough.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🏢 Tier 3: The Enterprise AI Content SOP</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$2,000</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">A complete, internal operational playbook (SOP) for your team. Includes custom-coded GPT/Claude instructions, automated scraping/ideation workflows (using tools like Make.com or Zapier), and quality control checklists.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 8: GoHighLevel -->
+                <div class="bg-executiveBlack-card border border-executiveBlue-800/40 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group hover:border-executiveGold-500/30">
+                    <button onclick="toggleService('ghl')" class="w-full flex items-center justify-between p-5 md:p-6 bg-executiveBlack-card hover:bg-executiveBlue-900/20 transition focus:outline-none">
+                        <div class="flex items-center gap-5 text-left">
+                            <div class="w-12 h-12 flex-shrink-0 rounded-full bg-executiveBlue-900/50 border border-executiveBlue-800 flex items-center justify-center text-executiveGold-500 text-lg shadow-inner group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-extrabold text-base md:text-lg tracking-wide">8. GoHighLevel Setup Specialist Packages</h3>
+                                <p class="text-gray-400 text-[11px] md:text-xs mt-1 font-medium">Focus: Deep system architecture built out once and handed over for scaling.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-executiveBlue-950 border border-executiveBlue-800 text-executiveGold-500">
+                            <i id="service-icon-ghl" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    
+                    <div id="service-content-ghl" class="hidden border-t border-executiveBlue-800/40 p-5 md:p-8 bg-gradient-to-b from-executiveBlue-950/50 to-executiveBlack/80">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🧱 Tier 1: Foundational CRM Architecture</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$800</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Core account setup, domain mapping, SMTP/email configuration, 1 custom Sales Pipeline, and 1 Calendar integration.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlue-900/20 border border-executiveGold-500/50 rounded-xl p-6 relative flex flex-col shadow-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition duration-300 transform lg:-translate-y-2">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-gradient text-executiveBlack text-[9px] font-extrabold tracking-widest px-3 py-1 uppercase rounded-sm shadow-md">Most Popular</div>
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🔄 Tier 2: The Automated Client Acquisition Engine</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$1,500</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveGold-500/20 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Everything in Tier 1 + 1 custom capture funnel (Landing Page + Thank You Page) + Complete automated onboarding workflow (Auto-confirmation text, internal notifications, 4-step email reminder sequence).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-executiveBlack/80 border border-executiveBlue-800/40 rounded-xl p-6 relative flex flex-col hover:border-executiveGold-500/50 transition duration-300">
+                                <h4 class="text-white font-bold text-sm tracking-wide mb-1">🚀 Tier 3: The Complete Agency/Business Ecosystem</h4>
+                                <div class="text-2xl font-extrabold text-gold-gradient mb-5">$2,500+</div>
+                                <div class="space-y-4 flex-grow border-t border-executiveBlue-800/30 pt-4">
+                                    <div>
+                                        <span class="text-[9px] uppercase tracking-widest text-executiveGold-500 font-extrabold block mb-1">Deliverables</span>
+                                        <p class="text-xs text-gray-300 leading-relaxed font-light">Full-scale platform buildout. Multiple pipelines, advanced multi-stage automated workflows, full website or multi-step funnel migration, custom dashboard metrics, custom SMS/Email marketing templates, and a complete hand-off documentation folder.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms and Protection -->
+                <div class="bg-executiveBlack border border-executiveBlue-800/30 rounded-xl p-6 md:p-8 mt-12 text-center md:text-left shadow-2xl">
+                    <div class="flex items-center gap-3 justify-center md:justify-start mb-4 text-executiveGold-500">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                        <h3 class="text-white font-extrabold tracking-wide uppercase text-sm">💡 Project Terms & Scope Protection</h3>
+                    </div>
+                    <div class="space-y-3 text-xs text-gray-300 font-light leading-relaxed">
+                        <p><strong class="text-white font-semibold">Revisions:</strong> Each package includes exactly two rounds of consolidative feedback to ensure the final deliverable aligns perfectly with your vision. Additional adjustments are billed at a flat premium rate per request.</p>
+                        <p><strong class="text-white font-semibold">Scope of Work:</strong> Any feature, integration, or deliverable not explicitly itemized in the selected package constitutes a change of scope and will require a separate project quote.</p>
+                    </div>
+                </div>
+
+                <!-- Strategic CTA -->
+                <div class="mt-12 text-center">
+                    <h3 class="text-xl md:text-2xl font-extrabold text-white mb-6">Ready to start a project with Queenie Plaza?</h3>
+                    <a href="#booking" class="inline-block bg-gold-gradient text-executiveBlack px-10 py-4 rounded-sm font-extrabold uppercase tracking-widest shadow-xl hover:shadow-executiveGold-500/25 hover:scale-105 transition-all duration-300 text-xs md:text-sm">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Send Your Inquiry or Project Brief
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Strategy Explorer Section -->
+    <section id="social-channels" class="py-20 bg-executiveBlack relative overflow-hidden border-t border-executiveBlue-800/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-executiveGold-500 uppercase tracking-widest text-xs font-semibold">Omnichannel Ecosystem</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-1 text-white">
+                    Multi-Channel Hub
+                </h2>
+                <p class="text-gray-300 mt-2 text-xs md:text-sm">
+                    Toggle through Queenie's daily insights, leadership frameworks, and visual branding formats across primary executive channels.
+                </p>
+            </div>
+
+            <!-- Interactive Tabbed social layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Nav Buttons Panel -->
+                <div class="lg:col-span-4 flex flex-col space-y-3">
+                    <button onclick="switchSocialTab('linkedin')" id="tabBtn-linkedin" class="w-full text-left p-5 rounded-lg border bg-executiveBlack-card border-executiveGold-500/40 text-white transition duration-300 shadow-md">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl text-blue-500"><i class="fa-brands fa-linkedin"></i></span>
+                            <div>
+                                <h4 class="font-bold text-xs md:text-sm tracking-wide">LinkedIn Profile</h4>
+                                <span class="text-[9px] text-gray-400 uppercase tracking-wider">Strategic Business Focus</span>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button onclick="switchSocialTab('linktree')" id="tabBtn-linktree" class="w-full text-left p-5 rounded-lg border bg-executiveBlue-950 border-executiveBlue-800/30 text-gray-400 hover:border-executiveGold-500/40 hover:text-white transition duration-300">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl text-green-400"><i class="fa-solid fa-link"></i></span>
+                            <div>
+                                <h4 class="font-bold text-xs md:text-sm tracking-wide">Linktree Hub</h4>
+                                <span class="text-[9px] text-gray-400 uppercase tracking-wider">Unified Strategic Funnels</span>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button onclick="switchSocialTab('tiktok')" id="tabBtn-tiktok" class="w-full text-left p-5 rounded-lg border bg-executiveBlue-950 border-executiveBlue-800/30 text-gray-400 hover:border-executiveGold-500/40 hover:text-white transition duration-300">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl text-red-400"><i class="fa-brands fa-tiktok"></i></span>
+                            <div>
+                                <h4 class="font-bold text-xs md:text-sm tracking-wide">TikTok Channel</h4>
+                                <span class="text-[9px] text-gray-400 uppercase tracking-wider">Actionable Daily Videos</span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Right View Mock Container -->
+                <div class="lg:col-span-8 bg-executiveBlack-card border border-executiveBlue-800/40 rounded-2xl p-6 shadow-2xl min-h-[500px] flex flex-col justify-between glass-panel">
+                    
+                    <!-- Content View: LinkedIn (Featuring Professional Picture_3.png) -->
+                    <div id="tabContent-linkedin" class="space-y-6">
+                        <!-- Profile Header -->
+                        <div class="flex items-center justify-between border-b border-executiveBlue-800/20 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full overflow-hidden border border-executiveGold-500/40 relative flex-shrink-0">
+                                    <img 
+                                        src="https://lh3.googleusercontent.com/d/1EGvdzQxJPP3_--HV715MJ-lo1XduDA4u" 
+                                        alt="Queenie Plaza Professional Headshot" 
+                                        class="w-full h-full object-cover object-top"
+                                        onerror="handleImageError(this, 'avatar')"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-xs md:text-sm">Queenie Plaza <span class="text-[10px] text-executiveGold-500 ml-1 font-semibold"><i class="fa-solid fa-crown"></i> 1st</span></h4>
+                                    <p class="text-[9px] md:text-[10px] text-gray-400">Leadership & Empowerment Advocate | Strategic Speaker</p>
+                                    <p class="text-[8px] md:text-[9px] text-gray-500">Manila, Philippines • 500+ Connections</p>
+                                </div>
+                            </div>
+                            <button onclick="copyToClipboard('https://linkedin.com/in/queenieplaza')" class="text-[10px] border border-executiveBlue-800/40 text-gray-300 px-3 py-1.5 rounded hover:border-executiveGold-500 transition flex items-center gap-1.5">
+                                <i class="fa-regular fa-copy"></i> Connect
+                            </button>
+                        </div>
+
+                        <!-- Main Post Section -->
+                        <div class="space-y-3">
+                            <p class="text-[10px] text-gray-400">Queenie Plaza posted this • 2 days ago</p>
+                            <p class="text-xs md:text-sm text-gray-200 font-medium italic leading-relaxed">
+                                "Purpose isn't just an endgame goal—it's your ultimate daily leadership advantage. When you guide teams with absolute strategic clarity and authentic personal conviction, you don't simply trigger standard operational outcomes—you design lasting team transformations."
+                            </p>
+                            
+                            <!-- Highlight Graphic Card -->
+                            <div class="bg-royal-gradient border border-executiveGold-500/30 rounded-lg p-6 text-center space-y-4 relative">
+                                <h5 class="text-xs md:text-sm font-extrabold tracking-widest text-gold-gradient uppercase">The Power of Purpose-Driven Leadership</h5>
+                                <div class="flex items-center justify-center gap-4 text-[9px] md:text-xs font-semibold uppercase">
+                                    <span class="text-gray-300 flex items-center gap-1"><i class="fa-solid fa-mountain text-executiveGold-500"></i> Courage</span>
+                                    <span class="text-gray-300 flex items-center gap-1"><i class="fa-solid fa-rocket text-executiveGold-500"></i> Momentum</span>
+                                    <span class="text-gray-300 flex items-center gap-1"><i class="fa-solid fa-crosshairs text-executiveGold-500"></i> Clarity</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Activity stats -->
+                        <div class="flex items-center gap-4 text-[10px] text-gray-400 border-t border-executiveBlue-800/10 pt-4">
+                            <span><i class="fa-solid fa-thumbs-up text-blue-500"></i> 128 Likes</span>
+                            <span><i class="fa-solid fa-comment"></i> 15 Comments</span>
+                            <span><i class="fa-solid fa-share"></i> 28 Shares</span>
+                        </div>
+                    </div>
+
+                    <!-- Content View: Linktree (Featuring Professional Picture_3.png) -->
+                    <div id="tabContent-linktree" class="hidden space-y-6">
+                        <!-- Header with warm avatar image -->
+                        <div class="text-center space-y-2">
+                            <div class="w-16 h-16 rounded-full mx-auto overflow-hidden border-2 border-executiveGold-500/60 shadow-lg relative">
+                                <img 
+                                    src="https://lh3.googleusercontent.com/d/1EGvdzQxJPP3_--HV715MJ-lo1XduDA4u" 
+                                    alt="Queenie Plaza Profile Avatar" 
+                                    class="w-full h-full object-cover object-top"
+                                    onerror="handleImageError(this, 'avatar')"
+                                />
+                            </div>
+                            <h4 class="font-bold text-white text-base md:text-lg">@queenie.plaza</h4>
+                            <p class="text-xs text-gray-400 max-w-sm mx-auto">Helping leaders and entrepreneurs turn hesitation into confident action.</p>
+                        </div>
+
+                        <!-- Strategic Action funnels links layout -->
+                        <div class="space-y-3 max-w-md mx-auto">
+                            <a href="#brand-identity" class="w-full bg-executiveBlue-950 border border-executiveGold-500/40 hover:bg-gold-gradient hover:text-executiveBlack block text-center p-3 rounded font-bold text-[10px] uppercase tracking-widest transition duration-300">
+                                Visual Identity Focus
+                            </a>
+                            <a href="#values" class="w-full bg-executiveBlue-950 border border-executiveGold-500/40 hover:bg-gold-gradient hover:text-executiveBlack block text-center p-3 rounded font-bold text-[10px] uppercase tracking-widest transition duration-300">
+                                Core Brand Values
+                            </a>
+                            <a href="#booking" class="w-full bg-executiveBlue-950 border border-executiveGold-500/40 hover:bg-gold-gradient hover:text-executiveBlack block text-center p-3 rounded font-bold text-[10px] uppercase tracking-widest transition duration-300">
+                                Apply for Executive Mentorship
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Content View: TikTok (Featuring Professional Picture_3.png) -->
+                    <div id="tabContent-tiktok" class="hidden space-y-6">
+                        <!-- TikTok Header styling -->
+                        <div class="flex items-center justify-between border-b border-executiveBlue-800/20 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full overflow-hidden border border-executiveGold-500/40 relative flex-shrink-0">
+                                    <img 
+                                        src="https://lh3.googleusercontent.com/d/1EGvdzQxJPP3_--HV715MJ-lo1XduDA4u" 
+                                        alt="Queenie Plaza Profile Avatar" 
+                                        class="w-full h-full object-cover object-top"
+                                        onerror="handleImageError(this, 'avatar')"
+                                    />
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-xs md:text-sm">@queenie.plaza</h4>
+                                    <p class="text-[9px] md:text-[10px] text-gray-400">128.4K Likes • 25.7K Followers</p>
+                                </div>
+                            </div>
+                            <button onclick="copyToClipboard('https://tiktok.com/@queenie.plaza')" class="bg-red-500 text-white text-[9px] font-extrabold uppercase px-3 py-1 rounded-full hover:bg-red-600 transition">Follow</button>
+                        </div>
+
+                        <!-- Videos Grid simulation -->
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="bg-royal-gradient border border-executiveBlue-800/30 rounded aspect-[9/16] p-2 flex flex-col justify-between relative group overflow-hidden">
+                                <span class="bg-executiveBlack/60 text-white text-[8px] px-1.5 py-0.5 rounded self-start font-bold"><i class="fa-solid fa-play"></i> 6.3K</span>
+                                <p class="text-[8px] md:text-[10px] text-white font-bold leading-tight">CLARITY CREATES DIRECTION.</p>
+                                <div class="absolute inset-0 bg-executiveGold-500/10 opacity-0 group-hover:opacity-100 transition"></div>
+                            </div>
+                            <div class="bg-royal-gradient border border-executiveBlue-800/30 rounded aspect-[9/16] p-2 flex flex-col justify-between relative group overflow-hidden">
+                                <span class="bg-executiveBlack/60 text-white text-[8px] px-1.5 py-0.5 rounded self-start font-bold"><i class="fa-solid fa-play"></i> 7.9K</span>
+                                <p class="text-[8px] md:text-[10px] text-white font-bold leading-tight">3 MINDSETS OF LEADERS</p>
+                                <div class="absolute inset-0 bg-executiveGold-500/10 opacity-0 group-hover:opacity-100 transition"></div>
+                            </div>
+                            <div class="bg-royal-gradient border border-executiveBlue-800/30 rounded aspect-[9/16] p-2 flex flex-col justify-between relative group overflow-hidden">
+                                <span class="bg-executiveBlack/60 text-white text-[8px] px-1.5 py-0.5 rounded self-start font-bold"><i class="fa-solid fa-play"></i> 4.8K</span>
+                                <p class="text-[8px] md:text-[10px] text-white font-bold leading-tight">CONFIDENCE IS A DECISION.</p>
+                                <div class="absolute inset-0 bg-executiveGold-500/10 opacity-0 group-hover:opacity-100 transition"></div>
+                            </div>
+                        </div>
+
+                        <p class="text-center text-[10px] md:text-xs text-gray-400 font-medium tracking-wide">
+                            <i class="fa-solid fa-music animate-pulse"></i> original sound - queenie.plaza
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Contact Section -->
+    <section id="booking" class="py-24 bg-executiveBlack relative overflow-hidden border-t border-executiveBlue-800/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info block -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-executiveGold-500 uppercase tracking-widest text-xs font-semibold">SECURE YOUR STRATEGY CALL</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                        Let's Make an Impact Together
+                    </h2>
+                    
+                    <p class="text-gray-300 text-xs md:text-base font-light leading-relaxed">
+                        Prepared to scale your personal brand and optimize your leadership systems? Let's design a customized strategy to accelerate your growth.
+                    </p>
+
+                    <!-- Credentials list -->
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-3">
+                            <span class="text-executiveGold-500 text-lg"><i class="fa-solid fa-envelope"></i></span>
+                            <span class="text-xs md:text-sm text-gray-300 font-semibold">queeniee.plaza@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-executiveGold-500 text-lg"><i class="fa-solid fa-location-dot"></i></span>
+                            <span class="text-xs md:text-sm text-gray-300">Manila, Philippines • Serving Globally</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form container -->
+                <div class="lg:col-span-7">
+                    <div class="bg-executiveBlack-card border border-executiveBlue-800/30 p-6 md:p-8 rounded-xl shadow-2xl relative glass-panel">
+                        <form id="contactForm" onsubmit="handleFormSubmission(event)" class="space-y-4">
+                            
+                            <!-- Dynamic success/error banner -->
+                            <div id="formFeedback" class="hidden p-4 rounded text-xs font-medium uppercase tracking-wider"></div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">First Name *</label>
+                                    <input type="text" required class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-white rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition" placeholder="John">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Last Name *</label>
+                                    <input type="text" required class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-white rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition" placeholder="Doe">
+                                </div>
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Your Email *</label>
+                                <input type="email" required class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-white rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition" placeholder="john@example.com">
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Interest Area *</label>
+                                <select id="interestSelect" required class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-gray-300 rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition">
+                                    <option value="">Select Option Type</option>
+                                    <option value="funnel">1. Funnel Design Packages</option>
+                                    <option value="website">2. Website Design Packages</option>
+                                    <option value="social">3. Social Media Content Creation (Batch Packages)</option>
+                                    <option value="brand">4. Brand Kit Design Packages</option>
+                                    <option value="email">5. Email Marketing Setup Packages</option>
+                                    <option value="lead">6. Lead Generation Projects</option>
+                                    <option value="ai">7. AI Content Systems</option>
+                                    <option value="ghl">8. GoHighLevel Setup Specialist Packages</option>
+                                </select>
+                            </div>
+
+                            <!-- The 5-Question For Client Section -->
+                            <div class="pt-4 pb-2 border-t border-executiveBlue-800/30 mt-4">
+                                <h4 class="text-executiveGold-500 text-xs font-extrabold uppercase tracking-widest mb-1"><i class="fa-solid fa-filter mr-1"></i> The 5-Question For Client</h4>
+                                <p class="text-[10px] text-gray-400">Please provide project details to ensure we are a strategic fit.</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">1. Main Goal of this Project *</label>
+                                    <select required class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-gray-300 rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition">
+                                        <option value="">Select Goal</option>
+                                        <option value="brand_awareness">Brand Awareness</option>
+                                        <option value="lead_generation">Lead Generation</option>
+                                        <option value="content_creation">Content Creation</option>
+                                        <option value="full_strategy">Full Strategy</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">2. Comfortable Budget Range *</label>
+                                    <select required class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-gray-300 rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition">
+                                        <option value="">Select Budget</option>
+                                        <option value="1k_3k">$1,000 – $3,000</option>
+                                        <option value="3k_5k">$3,000 – $5,000</option>
+                                        <option value="5k_10k">$5,000 – $10,000</option>
+                                        <option value="10k_plus">$10,000+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">3. Target Launch Date / Deadline *</label>
+                                    <input type="text" required class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-white rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition" placeholder="e.g., Q3 2026, specific date...">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">4. Branding Assets Ready? *</label>
+                                    <select required class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-gray-300 rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition">
+                                        <option value="">Select Status</option>
+                                        <option value="all_ready">Yes, all ready</option>
+                                        <option value="some_help">Some, but need help</option>
+                                        <option value="scratch">No, starting from scratch</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">5. Current Website / Social Profile *</label>
+                                <input type="url" required class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-white rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition" placeholder="https://">
+                            </div>
+
+                            <div class="space-y-1.5 pt-2">
+                                <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Your Primary Strategy Challenge</label>
+                                <textarea id="formStrategyChallenge" rows="3" class="w-full bg-executiveBlue-950 border border-executiveBlue-800/40 text-white rounded p-3 text-xs focus:outline-none focus:border-executiveGold-500 transition" placeholder="What is currently holding you back from taking bold actions?"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gold-gradient text-executiveBlack font-extrabold py-3.5 rounded-sm hover:scale-[1.01] transition-all uppercase tracking-widest text-xs mt-2">
+                                Submit Strategy Call Application
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Footer -->
+    <footer class="bg-executiveBlue-950 border-t border-executiveBlue-800/30 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col text-center md:text-left">
+                <span class="text-lg font-extrabold text-white tracking-widest uppercase">QUEENIE PLAZA</span>
+                <span class="text-[9px] uppercase tracking-[0.25em] text-executiveGold-500 font-semibold mt-1">Take Bold Action. Lead with Purpose.</span>
+            </div>
+            
+            <div class="flex items-center gap-6 text-xl text-gray-400">
+                <a href="#social-channels" onclick="switchSocialTab('linkedin')" class="hover:text-executiveGold-500 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#social-channels" onclick="switchSocialTab('tiktok')" class="hover:text-executiveGold-500 transition"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#social-channels" onclick="switchSocialTab('linktree')" class="hover:text-executiveGold-500 transition"><i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="text-[9px] md:text-[10px] text-gray-400 text-center md:text-right uppercase tracking-widest">
+                © 2026 QUEENIE PLAZA. ALL RIGHTS RESERVED.<br>
+                All brand parameters match formatting rules inside the <span class="text-executiveGold-500">"Queenie Plaza Brand Kit.pdf"</span> verbatim.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Application Logic Scripting -->
+    <script>
+        // Interactive Mobile Drawer Controls
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileDrawer.classList.remove('hidden');
+        });
+
+        closeMobileMenuBtn.addEventListener('click', () => {
+            mobileDrawer.classList.add('hidden');
+        });
+
+        function toggleMobileMenu() {
+            mobileDrawer.classList.add('hidden');
+        }
+
+        // Persona Identity Switcher Logic
+        function switchBrandPersona(activePersona) {
+            const strategicBtn = document.getElementById('personaBtn-strategic');
+            const warmBtn = document.getElementById('personaBtn-warm');
+            const strategicCard = document.getElementById('personaCard-strategic');
+            const warmCard = document.getElementById('personaCard-warm');
+
+            if (activePersona === 'strategic') {
+                strategicBtn.className = "w-full text-left p-5 rounded-md border-2 border-executiveGold-500/80 bg-executiveBlue-950 text-white transition duration-300 shadow-lg";
+                strategicBtn.querySelector('.w-10').className = "w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center text-executiveBlack font-bold text-sm";
+                
+                warmBtn.className = "w-full text-left p-5 rounded-md border border-executiveBlue-800/30 bg-executiveBlack-card/50 text-gray-400 hover:border-executiveGold-500/35 hover:text-white transition duration-300";
+                warmBtn.querySelector('.w-10').className = "w-10 h-10 rounded-full bg-executiveBlue-900/60 border border-executiveBlue-800/50 flex items-center justify-center text-gray-300 text-sm";
+
+                strategicCard.classList.remove('hidden');
+                warmCard.classList.add('hidden');
+            } else {
+                warmBtn.className = "w-full text-left p-5 rounded-md border-2 border-executiveGold-500/80 bg-executiveBlue-950 text-white transition duration-300 shadow-lg";
+                warmBtn.querySelector('.w-10').className = "w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center text-executiveBlack font-bold text-sm";
+                
+                strategicBtn.className = "w-full text-left p-5 rounded-md border border-executiveBlue-800/30 bg-executiveBlack-card/50 text-gray-400 hover:border-executiveGold-500/35 hover:text-white transition duration-300";
+                strategicBtn.querySelector('.w-10').className = "w-10 h-10 rounded-full bg-executiveBlue-900/60 border border-executiveBlue-800/50 flex items-center justify-center text-gray-300 text-sm";
+
+                warmCard.classList.remove('hidden');
+                strategicCard.classList.add('hidden');
+            }
+        }
+
+        // Custom Link Copy Functionality
+        function copyToClipboard(urlToCopy) {
+            const tempInput = document.createElement('input');
+            tempInput.value = urlToCopy || "https://queenieplaza.com";
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            const feedbackBanner = document.getElementById('formFeedback');
+            feedbackBanner.classList.remove('hidden');
+            feedbackBanner.className = "p-4 rounded text-xs font-medium uppercase tracking-wider bg-green-500/20 text-green-300 mb-4";
+            feedbackBanner.innerText = "Copied successfully!";
+            setTimeout(() => {
+                feedbackBanner.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Social Tabs switching mechanism
+        function switchSocialTab(activeTab) {
+            const tabs = ['linkedin', 'linktree', 'tiktok'];
+            tabs.forEach(tab => {
+                const btn = document.getElementById(`tabBtn-${tab}`);
+                const content = document.getElementById(`tabContent-${tab}`);
+                if (tab === activeTab) {
+                    btn.className = "w-full text-left p-5 rounded-lg border bg-executiveBlack-card border-executiveGold-500/40 text-white transition duration-300 shadow-md";
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = "w-full text-left p-5 rounded-lg border bg-executiveBlue-950 border-executiveBlue-800/30 text-gray-400 hover:border-executiveGold-500/40 hover:text-white transition duration-300";
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        // Handle Booking Contact Form Submissions
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            const feedbackBanner = document.getElementById('formFeedback');
+            
+            feedbackBanner.classList.remove('hidden');
+            feedbackBanner.className = "p-4 rounded text-xs font-medium uppercase tracking-wider bg-green-500/20 text-green-300 mb-4";
+            feedbackBanner.innerText = "Application received successfully! Our alignment team will email you within 24 hours.";
+            
+            document.getElementById('contactForm').reset();
+            setTimeout(() => {
+                feedbackBanner.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Accordion Toggle Logic for Service Packages
+        function toggleService(serviceId) {
+            const content = document.getElementById(`service-content-${serviceId}`);
+            const icon = document.getElementById(`service-icon-${serviceId}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Global Click Ripple Effect
+        window.addEventListener('click', function(e) {
+            const ripple = document.createElement('div');
+            // Using Tailwind classes for a subtle, premium pulse effect
+            ripple.className = "absolute w-8 h-8 rounded-full border border-executiveGold-500/50 pointer-events-none animate-ping z-[9999]";
+            // Center the ripple on the click coordinates
+            ripple.style.left = (e.pageX - 16) + 'px';
+            ripple.style.top = (e.pageY - 16) + 'px';
+            document.body.appendChild(ripple);
+            // Remove element after animation completes
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    </script>
+</body>
+</html>
